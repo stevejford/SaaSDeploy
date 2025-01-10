@@ -30,7 +30,8 @@
     "tailwindcss/": "npm:/tailwindcss@3.4.1/",
     "@clerk/clerk-js": "npm:@clerk/clerk-js@5.0.0",
     "tabler_icons_tsx/": "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/",
-    "fresh_charts/": "https://deno.land/x/fresh_charts@0.3.1/"
+    "fresh_charts/": "https://deno.land/x/fresh_charts@0.3.1/",
+    "$std/": "https://deno.land/std@0.216.0/"
   },
   "exclude": ["coverage/", "_fresh/", "**/_fresh/*"],
   "lint": { "rules": { "tags": ["fresh", "recommended"] } }
