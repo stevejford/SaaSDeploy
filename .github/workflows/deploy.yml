@@ -14,13 +14,6 @@ jobs:
       id-token: write # Needed for auth with Deno Deploy
       contents: read # Needed to clone the repository
 
-    env:
-      CLERK_PUBLISHABLE_KEY: ${{ secrets.CLERK_PUBLISHABLE_KEY }}
-      CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
-      GITHUB_CLIENT_ID: ${{ secrets.GITHUB_CLIENT_ID }}
-      GITHUB_CLIENT_SECRET: ${{ secrets.GITHUB_CLIENT_SECRET }}
-      USER_ID: ${{ secrets.USER_ID }}
-
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
@@ -35,14 +28,17 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: Install step
+        run: "deno task install"
+
       - name: Build step
         run: "deno task build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "stevejford-saasdeploy-17"
+          project: "saaskit-49"
           entrypoint: "main.ts"
-          token: ${{ secrets.DENO_DEPLOY_TOKEN }}
+          root: "."
           
           
