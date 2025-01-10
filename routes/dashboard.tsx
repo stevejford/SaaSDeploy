@@ -1,6 +1,7 @@
+import { PageProps } from "$fresh/server.ts";
 import CRMLayout from "../components/CRMLayout.tsx";
 
-export default function DashboardPage() {
+export default function DashboardPage(props: PageProps) {
   return (
     <CRMLayout>
       <div class="bg-white rounded-lg shadow p-6">

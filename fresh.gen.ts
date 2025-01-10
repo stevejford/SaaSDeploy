@@ -16,6 +16,7 @@ import * as $api_users_login_index from "./routes/api/users/[login]/index.ts";
 import * as $api_users_login_items from "./routes/api/users/[login]/items.ts";
 import * as $api_users_index from "./routes/api/users/index.ts";
 import * as $api_vote from "./routes/api/vote.ts";
+import * as $dashboard from "./routes/dashboard.tsx";
 import * as $dashboard_index from "./routes/dashboard/index.tsx";
 import * as $dashboard_stats from "./routes/dashboard/stats.tsx";
 import * as $dashboard_users from "./routes/dashboard/users.tsx";
@@ -45,6 +46,7 @@ const manifest = {
     "./routes/api/users/[login]/items.ts": $api_users_login_items,
     "./routes/api/users/index.ts": $api_users_index,
     "./routes/api/vote.ts": $api_vote,
+    "./routes/dashboard.tsx": $dashboard,
     "./routes/dashboard/index.tsx": $dashboard_index,
     "./routes/dashboard/stats.tsx": $dashboard_stats,
     "./routes/dashboard/users.tsx": $dashboard_users,
