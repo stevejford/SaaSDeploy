@@ -37,8 +37,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "saaskit-49"
+          project: "stevejford-saasdeploy-17"
           entrypoint: "main.ts"
-          root: ""
+          token: ${{ secrets.DENO_DEPLOY_TOKEN }}
           
           
