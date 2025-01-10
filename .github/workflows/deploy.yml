@@ -29,7 +29,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "deno task build"
+        run: "deno task install"
 
       - name: Build step
         run: "deno task build"
@@ -37,8 +37,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "stevejford-saasdeploy-17"
+          project: "saaskit-49"
           entrypoint: "main.ts"
-          token: ${{ secrets.DENO_DEPLOY_TOKEN }}
+          root: ""
           
           
