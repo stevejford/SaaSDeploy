@@ -1,5 +1,4 @@
 name: Deploy
-
 on:
   push:
     branches: main
@@ -38,6 +37,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: stevejford-saasdeploy-17
-          entrypoint: main.ts
-          token: ${{ secrets.DENO_DEPLOY_TOKEN }}
+          project: "saaskit-49"
+          entrypoint: "main.ts"
+          root: ""
+          
+          
