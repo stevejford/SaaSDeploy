@@ -30,8 +30,20 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Build
-        run: deno task build
+      - name: Cache Deno dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.deno
+            ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/deno.json') }}
+          restore-keys: |
+            ${{ runner.os }}-deno-
+
+      - name: Clean and Build
+        run: |
+          deno cache --reload main.ts
+          deno task build
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
